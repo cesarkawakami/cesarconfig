@@ -1,0 +1,25 @@
+[alias]
+        st = status
+        ci = commit
+        cam = commit --amend --no-edit
+        co = checkout
+        br = branch
+        lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+        llg = log --graph --all --decorate
+        si = !"git add -A; git ls-files --deleted -z | xargs -0 git rm -- ; git status"
+        current-branch = !"current_branch=`git symbolic-ref HEAD 2> /dev/null`;\
+                           echo ${current_branch##refs/heads/}"
+        po = !"git push origin `git current-branch`"
+        pf = !"git push -f origin `git current-branch`"
+        pb = !"git fetch; git fetch --tags; git merge --ff-only origin/`git current-branch`"
+        pbf = !"git fetch; git fetch --tags; git reset --hard origin/`git current-branch`"
+        brd = !"current_branch=`git current-branch`;\
+                git co master;\
+                git br -D $current_branch;\
+                git push -f origin :$current_branch;"
+        rbim = rebase -i master
+        smuir = submodule update --init --recursive
+[color]
+        ui = true
+[merge]
+        conflictstyle = diff3
