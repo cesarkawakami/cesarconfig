@@ -19,6 +19,11 @@ Add to `~/.tmux.conf`:
 source-file ~/cesarconfig/tmux.conf
 ```
 
+To force tmux to use zsh (change to `/usr/local/bin/zsh` if needed):
+```
+set-option -g default-shell /bin/zsh
+```
+
 
 ## Git
 Add to `~/.gitconfig`:
