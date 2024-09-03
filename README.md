@@ -31,3 +31,10 @@ Add to `~/.gitconfig`:
 [include]
     path = ~/cesarconfig/gitconfig
 ```
+
+## IdeaVIM
+Add to `~/.ideavimrc`:
+```
+source ~/cesarconfig/ideavimrc
+```
+
