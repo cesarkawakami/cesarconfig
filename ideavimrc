@@ -19,3 +19,4 @@ set ttimeoutlen=100
 set cursorline
 set wildmode=longest,list
 set multiple-cursors
+set surround
