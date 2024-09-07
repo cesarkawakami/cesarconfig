@@ -3,6 +3,7 @@ HISTSIZE=1000000
 SAVEHIST=1000000
 setopt share_history
 setopt interactivecomments
+setopt hist_ignore_dups
 
 # Command line editing
 bindkey -e
