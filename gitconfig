@@ -11,8 +11,8 @@
                            echo ${current_branch##refs/heads/}"
         po = !"git push origin `git current-branch`"
         pf = !"git push -f origin `git current-branch`"
-        pb = !"git fetch; git fetch --tags; git merge --ff-only origin/`git current-branch`"
-        pbf = !"git fetch; git fetch --tags; git reset --hard origin/`git current-branch`"
+        pb = !"git fetch; git merge --ff-only origin/`git current-branch`"
+        pbf = !"git fetch; git reset --hard origin/`git current-branch`"
         brd = !"current_branch=`git current-branch`;\
                 git co master;\
                 git br -D $current_branch;\
