@@ -38,3 +38,12 @@ Add to `~/.ideavimrc`:
 source ~/cesarconfig/ideavimrc
 ```
 
+### WezTerm
+Add to `~/.wezterm.lua`:
+```
+package.path = string.format("%s;%s/cesarconfig/wezterm/?.lua", package.path, os.getenv("HOME"))
+local cesarconfig = require 'cesarconfig'
+local config = {}
+cesarconfig.apply_to_config(config)
+return config
+```
