@@ -41,7 +41,8 @@ source ~/cesarconfig/ideavimrc
 ### WezTerm
 Add to `~/.wezterm.lua`:
 ```
-package.path = string.format("%s;%s/cesarconfig/wezterm/?.lua", package.path, os.getenv("HOME"))
+local wezterm = require "wezterm"
+package.path = string.format("%s;%s/cesarconfig/wezterm/?.lua", package.path, wezterm.home_dir)
 local cesarconfig = require 'cesarconfig'
 local config = {}
 cesarconfig.apply_to_config(config)
