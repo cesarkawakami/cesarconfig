@@ -13,11 +13,19 @@ local function config_multiplexing(config)
 end
 
 local function config_appearance(config)
-  config.font = wezterm.font_with_fallback {
-    "Cascadia Mono",
-    "JetBrains Mono",
-  }
   config.font_size = 10.5
+
+  -- These are built-in fonts, we're just customizing them
+  config.font = wezterm.font_with_fallback({
+    "JetBrains Mono",
+    "Noto Color Emoji",
+    "Symbols Nerd Font Mono",
+  }, {
+    weight = "Bold",
+  })
+
+  -- Disabling ligatures
+  config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 
   config.window_frame = {
     font_size = 10.0
