@@ -11,12 +11,21 @@ bindkey \^U backward-kill-line
 autoload -U select-word-style
 select-word-style bash
 
-autoload -Uz compinit
-compinit
-
 # Where am I
 __ccfg_dir=${0:a:h}
 
+# Completion: fallback to completing basic paths
+zstyle ':completion:*' completer _complete _approximate _files
+
+# Completion: show menu if ambiguous
+zstyle ':completion:*' menu yes=1 select=1 interactive search
+zstyle ':completion:*:descriptions' format '%F{green}-- %d --%f'
+zstyle ':completion:*:messages' format ' %F{purple} -- %d --%f'
+zstyle ':completion:*:warnings' format ' %F{red}-- no matches found --%f'
+zstyle ':completion:*' matcher-list '' \
+  'm:{a-z\-}={A-Z\_}' \
+  'r:[^[:alpha:]]||[[:alpha:]]=** r:|=* m:{a-z\-}={A-Z\_}' \
+  'r:|?=** m:{a-z\-}={A-Z\_}'
 
 # fzf
 . "$__ccfg_dir"/external/fzf/shell/completion.zsh
@@ -24,6 +33,10 @@ __ccfg_dir=${0:a:h}
 
 # git
 alias g='git'
+
+# Init completion (must be after configuration)
+autoload -Uz compinit
+compinit
 
 # Initialize starship if installed
 if command -v starship &> /dev/null; then
