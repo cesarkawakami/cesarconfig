@@ -38,7 +38,7 @@ Add to `~/.ideavimrc`:
 source ~/cesarconfig/ideavimrc
 ```
 
-### WezTerm
+## WezTerm
 Add to `~/.wezterm.lua`:
 ```
 local wezterm = require "wezterm"
@@ -47,4 +47,10 @@ local cesarconfig = require 'cesarconfig'
 local config = {}
 cesarconfig.apply_to_config(config)
 return config
+```
+
+## PowerShell (>= 6.x)
+Add to `$PROFILE`, e.g. `C:\Users\me\Documents\PowerShell\Microsoft.PowerShell_profile.ps1`:
+```
+. ~/cesarconfig/shellconfig.ps1
 ```
