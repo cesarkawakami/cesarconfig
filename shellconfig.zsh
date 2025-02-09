@@ -47,3 +47,8 @@ else
   # Pandaprompt
   . "$__ccfg_dir"/external/pandaprompt/pandaprompt.zsh
 fi
+
+# Initialize direnv if installed
+if command -v direnv &> /dev/null; then
+  eval "$(direnv hook zsh)"
+fi
