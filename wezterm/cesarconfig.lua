@@ -34,7 +34,7 @@ end
 
 local function config_shell(config)
   if wezterm.target_triple:find("windows") then
-    config.default_prog = {"powershell.exe"}
+    config.default_prog = {"pwsh.exe"}
   end
 end
 
