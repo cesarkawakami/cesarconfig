@@ -34,6 +34,11 @@ zstyle ':completion:*' matcher-list '' \
 # git
 alias g='git'
 
+# Allowing tab to select next menu item
+zmodload zsh/complist
+bindkey -M menuselect '^I' down-line-or-history  # tab
+bindkey -M menuselect '^[[Z' reverse-menu-complete  # shift-tab
+
 # Init completion (must be after configuration)
 autoload -Uz compinit
 compinit
