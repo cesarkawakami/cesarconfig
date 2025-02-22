@@ -6,7 +6,8 @@
         br = branch
         lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
         llg = log --graph --all --decorate
-        si = !"git add -A; git ls-files --deleted -z | xargs -0 git rm -- ; git status"
+        si = !"git add -A; git status"
+        an = add -AN
         current-branch = !"current_branch=`git symbolic-ref HEAD 2> /dev/null`;\
                            echo ${current_branch##refs/heads/}"
         po = !"git push origin `git current-branch`"
@@ -21,6 +22,8 @@
         smuir = submodule update --init --recursive
         merged-branches = !"git branch --merged | grep -Ev '(^\\*|master|main|dev)'"
         cleanup = !"merged_branches=$(git merged-branches); git branch -d $merged_branches; git push --delete origin $merged_branches"
+        binit = branchless init
+        s = switch
 [color]
         ui = true
 [merge]
