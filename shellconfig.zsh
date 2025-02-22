@@ -32,8 +32,11 @@ zstyle ':completion:*' matcher-list '' \
 . "$__ccfg_dir"/external/fzf/shell/key-bindings.zsh
 
 # git
+unalias g git &> /dev/null || true
+unfunction g git &> /dev/null || true
 alias g='git-branchless wrap --'
 alias git='git-branchless wrap --'
+fpath=("$__ccfg_dir"/external/git-branchless/zsh $fpath)
 
 # Allowing tab to select next menu item
 zmodload zsh/complist

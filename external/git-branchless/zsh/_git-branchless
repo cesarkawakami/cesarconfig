@@ -1,0 +1,275 @@
+#compdef git-branchless
+
+local common_options=(
+    "-C[Change to the given directory before executing the rest of the program]:directory:_path_files -/"
+    "--color=[Flag to force enable or disable terminal colors]:color flag:(auto always never)"
+    {-h,--help}"[Print help information]"
+)
+
+_git-branchless-amend() {
+    _arguments -s \
+        "${common_options[@]}" \
+        {-f,--force-rewrite}"[Force moving public commits, even though other people may have access to those commits]" \
+        {-m,--merge}"[Attempt to resolve merge conflicts, if any]"
+    return 0
+}
+
+_git-branchless-bug-report() {
+    _arguments -s "${common_options[@]}"
+    return 0
+}
+
+_git-branchless-gc() {
+    _arguments -s "${common_options[@]}"
+    return 0
+}
+
+_git-branchless-hide() {
+    _arguments -s \
+        "${common_options[@]}" \
+        {-D,--delete-branches}"[Also delete any branches that are abandoned as a result of this hide]" \
+        {-r,--recursive}"[Also recursively hide all visible children commits of the provided commits]" \
+        "*::revsets:__git_commit_ranges"
+    return 0
+}
+
+_git-branchless-init() {
+    _arguments -s \
+        "${common_options[@]}" \
+        "--uninstall[Uninstall the branchless workflow instead of initializing it]" \
+        "--main-branch[Use the provided name as the name of the main branch]:main branch:__git_branch_names"
+    return 0
+}
+
+_git-branchless-move() {
+    _arguments -s \
+        "${common_options[@]}" \
+        {-s,--source=}"[The source commit to move]:source:__git_recent_commits" \
+        {-b,--base=}"[A commit inside a subtree to move]:base:__git_recent_commits" \
+        "*"{-x,--exact=}"[A set of specific commits to move]:base:__git_recent_commits" \
+        {-d,--dest=}"[The destination commit to move all source commits onto]:base:__git_recent_commits" \
+        {-m,--merge}"[Attempt to resolve merge conflicts, if any]" \
+        {-I,--insert}"[Insert the subtree between the destination and it's children, if any]"
+    return 0
+}
+
+_git-branchless-next() {
+    _arguments -s \
+        "${common_options[@]}" \
+        {-b,--branch}"[Move the specified number of branches rather than commits]" \
+        {-o,--oldest}"[When encountering multiple next commits, choose the oldest]" \
+        {-n,--newest}"[When encountering multiple next commits, choose the newest]" \
+        {-i,--interactive}"[When encountering multiple next commits, interactively prompt which to advance to]" \
+        {-m,--merge}"[If the local changes conflict with the destination commit, attempt to merge them]" \
+        {-f,--force}"[If the local changes conflict with the destination commit, discard them (Use with caution!)]" \
+        "::num commits:_numbers -u commit -d 1"
+    return 0
+}
+
+# TODO: factor with next
+_git-branchless-prev() {
+    _arguments -s \
+        "${common_options[@]}" \
+        {-b,--branch}"[Move the specified number of branches rather than commits]" \
+        {-o,--oldest}"[When encountering multiple next commits, choose the oldest]" \
+        {-n,--newest}"[When encountering multiple next commits, choose the newest]" \
+        {-i,--interactive}"[When encountering multiple next commits, interactively prompt which to advance to]" \
+        {-m,--merge}"[If the local changes conflict with the destination commit, attempt to merge them]" \
+        {-f,--force}"[If the local changes conflict with the destination commit, discard them (Use with caution!)]" \
+        "::num commits:_numbers -u commit -d 1"
+    return 0
+}
+
+_git-branchless-query() {
+    _arguments -s \
+        "${common_options[@]}" \
+        {-b,--branches}"[Print the branches attached to the resulting commits, rather than the commits themselves]" \
+        {-r,--raw}"[Print the OID of each matching commit, one per line]" \
+        "::revsets:__git_commit_ranges"
+    return 0
+}
+
+_git-branchless-record() {
+    _arguments -s \
+        "${common_options[@]}" \
+        {-m,--message=}"[The commit message to use]:message" \
+        {-i,--interactive}"[Select changes to include interactively, rather than using the current staged/unstaged changes]" \
+        {-d,--detach}"[Detach the current branch before committing]" \
+        "::revsets:__git_commit_ranges"
+    return 0
+}
+
+_git-branchless-repair() {
+    _arguments -s "${common_options[@]}"
+    return 0
+}
+
+_git-branchless-restack() {
+    _arguments -s \
+        "${common_options[@]}" \
+        {-f,--force-rewrite}"[Force moving public commits, even though other people may have access to those commits]" \
+        {-m,--merge}"[Attempt to resolve merge conflicts, if any]" \
+        "*::revsets:__git_commit_ranges"
+    return 0
+}
+
+_git-branchless-reword() {
+    _arguments -s \
+        "${common_options[@]}" \
+        {-f,--force-rewrite}"[Force moving public commits, even though other people may have access to those commits]" \
+        {-m,--message=}"[Message to apply to commits]:message" \
+        {-d,--discard}"[Throw away the original commit messages]" \
+        "--fixup=[ A commit to \"fix up\"]:commit:__git_recent_commits" \
+        "*::revsets:__git_commit_ranges"
+    return 0
+}
+
+_git-branchless-smartlog() {
+    _arguments -s \
+        "${common_options[@]}" \
+        "::revset:__git_commit_ranges"
+    return 0
+}
+
+_git-branchless-submit() {
+    _arguments -s \
+        "${common_options[@]}" \
+        {-c,--create}"[If there is no remote branch for a given local branch, create the remote branch by pushing the local branch to the default push remote]" \
+        "::revset:__git_commit_ranges"
+    return 0
+}
+
+_git-branchless-switch() {
+    _arguments -s \
+        "${common_options[@]}" \
+        {-c,--create}"[When checking out the target commit, also create a branch with the provided name pointing to that commit]:branch name" \
+        {-f,--force}"[Forcibly switch commits, discarding any working copy changes if necessary]" \
+        {-m,--merge}"[If the current working copy changes do not apply cleanly to the target commit, start merge conflict resolution instead of aborting]" \
+        "::target:__git_commits_prefer_recent"
+    return 0
+}
+
+_git-branchless-sync() {
+    _arguments -s \
+        "${common_options[@]}" \
+        {-p,--pull}'[Run `git fetch` to update remote references before carrying out the sync]' \
+        {-f,--force-rewrite}"[Force moving public commits, even though other people may have access to those commits]" \
+        {-m,--merge}"[Attempt to resolve merge conflicts, if any]" \
+        "*::revset:__git_commit_ranges"
+    return 0
+}
+
+_git-branchless-test() {
+    local line state
+
+    _arguments -C -s \
+        "${common_options[@]}" \
+        "1:git-branchless test subcommand:->cmds" \
+        "*::arg:->args"
+
+    case "$state" in
+        cmds)
+            _values "git-branchless test command" \
+                "run[Run a given command on a set of commits and present the successes and failures]" \
+                "show[Show the results of a set of previous test runs]" \
+                "clean[Clean any cached test results]" \
+                "help[Print this message or the help of the given subcommand(s)]"
+            ret=0
+            ;;
+        args)
+            _call_function ret "_git-branchless-test-${line[1]}"
+            ;;
+    esac
+
+    return ret
+}
+
+_git-branchless-test-clean() {
+    _arguments -s \
+        "${common_options[@]}" \
+        "::revset:__git_commit_ranges"
+    return 0
+}
+
+_git-branchless-test-run() {
+    _arguments -s \
+        "${common_options[@]}" \
+        {-x,--exec=}'[An ad-hoc command to execute on each commit]:exec:_path_commands' \
+        {-v,--verbose}"[Show the test output as well]" \
+        {-s,--strategy=}"[How to execute the tests]:strategy:(working-copy worktree)" \
+        {-j,--jobs=}"[How many jobs to execute in parallel]:jobs:_numbers -u jobs" \
+        "::revset:__git_commit_ranges"
+    return 0
+}
+
+_git-branchless-test-show() {
+    _arguments -s \
+        "${common_options[@]}" \
+        {-x,--exec=}'[An ad-hoc command to execute on each commit]:exec:_path_commands' \
+        {-v,--verbose}"[Show the test output as well]" \
+        "::revset:__git_commit_ranges"
+    return 0
+}
+
+_git-branchless-undo() {
+    _arguments -s \
+        "${common_options[@]}" \
+        {-i,--interactive}"[Interactively browse through previous states of the repository before selecting one to return to]" \
+        {-y,--yes}"[Skip confirmation and apply changes immediately]"
+    return 0
+}
+
+_git-branchless-unhide() {
+    _arguments -s \
+        "${common_options[@]}" \
+        {-r,--recursive}"[Also recursively unhide all children commits of the provided commits]"
+    return 0
+}
+
+_git-branchless-wrap() {
+    service="git"
+    _arguments -s \
+        "${common_options[@]}" \
+        "*::git command:_git"
+    return 0
+}
+
+local line state ret
+
+_arguments -C \
+    "1:Command:->cmds" \
+    "*::arg:->args"
+
+case "$state" in
+    cmds)
+        _values "git-branchless command" \
+            "amend[Amend the current HEAD commit]" \
+            "bug-report[Gather information about recent operations to upload as part of a bug report]" \
+            "gc[Run internal garbage collection]" \
+            "hide[Hide the provided commits from the smartlog]" \
+            "init[Initialize the branchless workflow for this repository]" \
+            "move[Move a subtree of commits from one location to another]" \
+            "next[Move to a later commit in the current stack]" \
+            "prev[Move to an earlier commit in the current stack]" \
+            "query[Query the commit graph using the \"revset\" language and print matching commits]" \
+            "repair[Restore internal invariants by reconciling the internal operation log with the state of the Git repository]" \
+            "restack[Fix up commits abandoned by a previous rewrite operation]" \
+            "record[Create a commit by interactively selecting which changes to include]" \
+            "reword[Reword commits]" \
+            "smartlog[Display a nice graph of the commits you've recently worked on]" \
+            "submit[Push commits to a remote]" \
+            "switch[Switch to the provided branch or commit]" \
+            "sync[Move any local commit stacks on top of the main branch]" \
+            "test[Run a command on each commit in a given set and aggregate the results]" \
+            "undo[Browse or return to a previous state of the repository]" \
+            "unhide[Unhide previously-hidden commits from the smartlog]" \
+            "wrap[Wrap a Git command inside a branchless transaction]" \
+            "help[Print this message or the help of the given subcommand(s)]"
+        ret=0
+        ;;
+    args)
+        _call_function ret "_git-branchless-${line[1]}" || _message "no completion for ${line[1]}"
+        ;;
+esac
+
+return ret
