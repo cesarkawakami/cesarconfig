@@ -25,6 +25,7 @@
         binit = branchless init
         s = switch
         sp = sync --pull
+        ss = branchless switch -i
 [color]
         ui = true
 [merge]
