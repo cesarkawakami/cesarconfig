@@ -26,6 +26,7 @@
         s = switch
         sp = sync --pull
         ss = branchless switch -i
+        sc = !"git sp && git cleanup; git sl"
 [color]
         ui = true
 [merge]
