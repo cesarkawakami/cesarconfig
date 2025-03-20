@@ -14,18 +14,12 @@ select-word-style bash
 # Where am I
 __ccfg_dir=${0:a:h}
 
-# Completion: fallback to completing basic paths
-zstyle ':completion:*' completer _complete _approximate _files
+# zsh-autocomplete, supersedes other completion configuration
+. "$__ccfg_dir"/external/zsh-plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
-# Completion: show menu if ambiguous
-zstyle ':completion:*' menu yes=1 select=1 interactive search
-zstyle ':completion:*:descriptions' format '%F{green}-- %d --%f'
-zstyle ':completion:*:messages' format ' %F{purple} -- %d --%f'
-zstyle ':completion:*:warnings' format ' %F{red}-- no matches found --%f'
-zstyle ':completion:*' matcher-list '' \
-  'm:{a-z\-}={A-Z\_}' \
-  'r:[^[:alpha:]]||[[:alpha:]]=** r:|=* m:{a-z\-}={A-Z\_}' \
-  'r:|?=** m:{a-z\-}={A-Z\_}'
+# completion colors
+zstyle ':completion:*:*:*:*:descriptions' format '%F{green}-- %d --%f'
+zstyle ':completion:*' list-colors 'di=1:fi=96:*.m=31:*.py=32:*.txt=36:*.out=35'
 
 # fzf
 . "$__ccfg_dir"/external/fzf/shell/completion.zsh
@@ -37,15 +31,6 @@ unfunction g git &> /dev/null || true
 alias g='git-branchless wrap --'
 alias git='git-branchless wrap --'
 fpath=("$__ccfg_dir"/external/git-branchless/zsh $fpath)
-
-# Allowing tab to select next menu item
-zmodload zsh/complist
-bindkey -M menuselect '^I' down-line-or-history  # tab
-bindkey -M menuselect '^[[Z' reverse-menu-complete  # shift-tab
-
-# Init completion (must be after configuration)
-autoload -Uz compinit
-compinit
 
 # Initialize starship if installed
 if command -v starship &> /dev/null; then

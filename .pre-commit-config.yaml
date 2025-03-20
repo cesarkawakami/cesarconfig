@@ -25,11 +25,3 @@ repos:
     rev: v0.15.0
     hooks:
       - id: yamlfmt
-
-  - repo: local
-    hooks:
-      - id: zsh-run
-        name: Run some ZSH scripts
-        language: docker_image
-        files: shellconfig.zsh|starship/win-title-config.zsh
-        entry: zshusers/zsh:5.9 zsh -c 'set -e; . "${@/#/./}"' _
