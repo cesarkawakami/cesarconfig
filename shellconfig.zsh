@@ -21,6 +21,9 @@ __ccfg_dir=${0:a:h}
 zstyle ':completion:*:*:*:*:descriptions' format '%F{green}-- %d --%f'
 zstyle ':completion:*' list-colors 'di=1:fi=96:*.m=31:*.py=32:*.txt=36:*.out=35'
 
+# zsh-autosuggestions
+. "$__ccfg_dir"/external/zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 # fzf
 . "$__ccfg_dir"/external/fzf/shell/completion.zsh
 . "$__ccfg_dir"/external/fzf/shell/key-bindings.zsh

@@ -1,3 +1,5 @@
+exclude: ^external/
+
 repos:
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
@@ -13,13 +15,12 @@ repos:
     rev: v3.10.0-2
     hooks:
       - id: shfmt
-        exclude: ^external/fzf/shell/
 
   - repo: https://github.com/koalaman/shellcheck-precommit
     rev: v0.10.0
     hooks:
       - id: shellcheck
-        exclude: ^external/fzf/shell/|.zsh
+        exclude: .zsh
 
   - repo: https://github.com/google/yamlfmt
     rev: v0.15.0
