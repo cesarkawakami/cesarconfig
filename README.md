@@ -8,7 +8,7 @@ Add to `~/.zshrc`:
 ```
 
 ## Oh-My-ZSH
-Add to `~/.zshrc` before the `source $ZSH/oh-my-zsh.sh` line:
+Replace the `source $ZSH/oh-my-zsh.sh` line with:
 ```
 . ~/cesarconfig/shellconfig.oh-my-zsh.zsh
 ```
