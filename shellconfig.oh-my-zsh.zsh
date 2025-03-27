@@ -6,6 +6,7 @@ plugins=(
     git
     fzf
     zsh-github-copilot
+    kubectl
 )
 
 source $ZSH/oh-my-zsh.sh
