@@ -31,3 +31,8 @@
         ui = true
 [merge]
         conflictstyle = diff3
+
+[diff]
+        tool = meld
+[merge]
+        tool = meld
