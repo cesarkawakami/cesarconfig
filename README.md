@@ -7,6 +7,12 @@ Add to `~/.zshrc`:
 . ~/cesarconfig/shellconfig.zsh
 ```
 
+## Oh-My-ZSH
+Add to `~/.zshrc` before the `source $ZSH/oh-my-zsh.sh` line:
+```
+. ~/cesarconfig/shellconfig.oh-my-zsh.zsh
+```
+
 ## Bash (TODO)
 Add to `~/.bashrc`:
 ```
