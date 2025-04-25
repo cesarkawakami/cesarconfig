@@ -13,6 +13,17 @@ Replace the `source $ZSH/oh-my-zsh.sh` line with:
 . ~/cesarconfig/shellconfig.oh-my-zsh.zsh
 ```
 
+## Starship
+Add to `~/.zshrc`:
+```
+export STARSHIP_CONFIG=~/cesarconfig/starship/starship.toml
+eval "$(starship init zsh)"
+
+# For setting window title
+. ~/cesarconfig/starship/win-title-config.zsh
+```
+
+
 ## Bash (TODO)
 Add to `~/.bashrc`:
 ```
@@ -59,4 +70,20 @@ return config
 Add to `$PROFILE`, e.g. `C:\Users\me\Documents\PowerShell\Microsoft.PowerShell_profile.ps1`:
 ```
 . ~/cesarconfig/shellconfig.ps1
+```
+
+
+## Fonts
+
+### GitHub Monaspace
+
+https://monaspace.githubnext.com/
+
+```
+Font Name:           Monaspace Neon
+Normal font weight:  400
+Bold font weight:    700
+
+# macOS
+brew install font-monaspace
 ```

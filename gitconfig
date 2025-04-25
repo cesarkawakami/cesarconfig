@@ -20,7 +20,7 @@
                 git push -f origin :$current_branch;"
         rbim = rebase -i master
         smuir = submodule update --init --recursive
-        merged-branches = !"git branch --merged | grep -Ev '(^\\*|master|main|dev)'"
+        merged-branches = !"git branch --merged \"$(git config get branchless.core.mainBranch)\" | grep -Ev '(^\\*|master|main|dev)'"
         cleanup = !"merged_branches=$(git merged-branches); git branch -d $merged_branches; git push --delete origin $merged_branches"
         binit = branchless init
         s = switch
