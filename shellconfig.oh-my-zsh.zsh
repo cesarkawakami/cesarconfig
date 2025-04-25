@@ -9,7 +9,11 @@ plugins=(
     kubectl
 )
 
+DISABLE_AUTO_TITLE=true
+
 source $ZSH/oh-my-zsh.sh
+
+zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'r:|=*' 'l:|=* r:|=*' 'm:[^a-zA-Z0-9~]=* l:|=* r:|=*'
 
 # Command line editing
 bindkey '^U' backward-kill-line
