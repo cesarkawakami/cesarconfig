@@ -34,5 +34,8 @@
 
 [diff]
         tool = meld
+        colorMoved = default
+        algorithm = histogram
+
 [merge]
         tool = meld
