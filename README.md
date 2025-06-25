@@ -41,6 +41,11 @@ To force tmux to use zsh (change to `/usr/local/bin/zsh` if needed):
 set-option -g default-shell /bin/zsh
 ```
 
+## Atuin (smart shared history)
+```
+ln -sf ~/cesarconfig/atuin_config.toml ~/.config/atuin/config.toml
+```
+
 
 ## Git
 Add to `~/.gitconfig`:
