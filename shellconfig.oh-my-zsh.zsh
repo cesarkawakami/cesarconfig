@@ -4,9 +4,7 @@ ZSH_CUSTOM="${0:a:h}/external/oh-my-zsh-custom"
 
 plugins=(
     git
-    fzf
-    zsh-github-copilot
-    kubectl
+	fzf
 )
 
 DISABLE_AUTO_TITLE=true
@@ -18,7 +16,3 @@ zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}
 
 # Command line editing
 bindkey '^U' backward-kill-line
-
-# zsh-github-copilot
-bindkey '^|' zsh_gh_copilot_explain
-bindkey '^\' zsh_gh_copilot_suggest
