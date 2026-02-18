@@ -1,0 +1,94 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "buffer_font_weight": 500.0,
+  "tab_bar": {
+    "show_pinned_tabs_in_separate_row": false,
+    "show_tab_bar_buttons": true,
+    "show_nav_history_buttons": false
+  },
+  "tabs": {
+    "file_icons": false,
+    "git_status": true
+  },
+  "preview_tabs": {
+    "enable_preview_multibuffer_from_code_navigation": true
+  },
+  "preferred_line_length": 110,
+  "soft_wrap": "editor_width",
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 500
+    }
+  },
+  "double_click_in_multibuffer": "open",
+  "inlay_hints": {
+    "show_background": false,
+    "enabled": true,
+  },
+  "vim": {
+    "use_system_clipboard": "never",
+    "toggle_relative_line_numbers": true,
+  },
+  "agent_ui_font_size": 16.0,
+  "file_finder": {
+    "include_ignored": "all",
+  },
+  "agent": {
+    "inline_assistant_model": {
+      "provider": "copilot_chat",
+      "model": "gemini-2.5-pro"
+    },
+    "default_profile": "ask",
+    "default_model": {
+      "provider": "google",
+      "model": "gemini-3-flash-preview",
+    },
+    "favorite_models": [],
+    "model_parameters": [],
+  },
+  "context_servers": {
+    "mcp-server-context7": {
+      "enabled": true,
+      "remote": false,
+      "settings": {
+        "context7_api_key": "ctx7sk-3b7fd8e2-2aa7-42f2-acfc-9c9c01d3f78c",
+      },
+    },
+  },
+  "buffer_line_height": "comfortable",
+  "buffer_font_family": "Monaspace Neon Var",
+  "terminal": {
+    "font_weight": 500.0,
+    "line_height": "comfortable",
+  },
+  "agent_servers": {
+    "opencode": {
+      "type": "registry",
+    },
+  },
+  "session": {
+    "trust_all_worktrees": true,
+  },
+  "icon_theme": "Zed (Default)",
+  "vim_mode": true,
+  "base_keymap": "VSCode",
+  "ui_font_size": 16.0,
+  "buffer_font_size": 12.0,
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "One Dark",
+  },
+  "languages": {
+    "Kotlin": {
+      "language_servers": ["kotlin-lsp"],
+    },
+  },
+}
