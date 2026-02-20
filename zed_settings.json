@@ -32,15 +32,15 @@
   "double_click_in_multibuffer": "open",
   "inlay_hints": {
     "show_background": true,
-    "enabled": true,
+    "enabled": true
   },
   "vim": {
     "use_system_clipboard": "never",
-    "toggle_relative_line_numbers": true,
+    "toggle_relative_line_numbers": true
   },
   "agent_ui_font_size": 16.0,
   "file_finder": {
-    "include_ignored": "all",
+    "include_ignored": "all"
   },
   "agent": {
     "inline_assistant_model": {
@@ -50,46 +50,46 @@
     "default_profile": "ask",
     "default_model": {
       "provider": "google",
-      "model": "gemini-3-flash-preview",
+      "model": "gemini-3-flash-preview"
     },
     "favorite_models": [],
-    "model_parameters": [],
+    "model_parameters": []
   },
   "context_servers": {
     "mcp-server-context7": {
       "enabled": true,
       "remote": false,
       "settings": {
-        "context7_api_key": "ctx7sk-3b7fd8e2-2aa7-42f2-acfc-9c9c01d3f78c",
-      },
-    },
+        "context7_api_key": "ctx7sk-3b7fd8e2-2aa7-42f2-acfc-9c9c01d3f78c"
+      }
+    }
   },
-  "buffer_line_height": "standard",
+  "buffer_line_height": "comfortable",
   "buffer_font_family": "JetBrains Mono",
   "terminal": {
-    "line_height": "comfortable",
+    "line_height": "comfortable"
   },
   "agent_servers": {
     "opencode": {
-      "type": "registry",
-    },
+      "type": "registry"
+    }
   },
   "session": {
-    "trust_all_worktrees": true,
+    "trust_all_worktrees": true
   },
   "icon_theme": "Zed (Default)",
   "vim_mode": true,
   "base_keymap": "VSCode",
   "ui_font_size": 16.0,
-  "buffer_font_size": 13.0,
+  "buffer_font_size": 12,
   "theme": {
     "mode": "dark",
     "light": "One Light",
-    "dark": "One Dark Pro",
+    "dark": "One Dark Pro"
   },
   "languages": {
     "Kotlin": {
-      "language_servers": ["kotlin-lsp"],
-    },
-  },
+      "language_servers": ["kotlin-lsp"]
+    }
+  }
 }
