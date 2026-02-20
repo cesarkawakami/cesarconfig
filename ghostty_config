@@ -46,7 +46,8 @@
 # # this within config files if you want to clear previously set values in
 # # configuration files or on the CLI if you want to clear values set on the
 # # CLI.
-font-family = Monaspace Neon Var
+# font-family = Monaspace Neon Var
+font-family = JetBrains Mono
 # font-family-italic = Monaspace Neon Medium Italic
 # # font-family-bold = Monaspace Neon Bold
 # # font-family-bold-italic = Monaspace Neon Bold Italic
@@ -81,6 +82,7 @@ font-family = Monaspace Neon Var
 # font-style-italic = Italic
 # font-style-bold = Bold
 # font-style-bold-italic = Bold Italic
+# font-style = SemiBold
 # # Control whether Ghostty should synthesize a style if the requested style is
 # # not available in the specified font-family.
 # #
@@ -154,7 +156,7 @@ font-synthetic-style = false
 # # On Linux with GTK, font size is scaled according to both display-wide and
 # # text-specific scaling factors, which are often managed by your desktop
 # # environment (e.g. the GNOME display scale and large text settings).
-font-size = 12
+font-size = 13
 #
 # # A repeatable configuration to set one or more font variations values for
 # # a variable font. A variable font is a single font, usually with a filename
@@ -174,7 +176,9 @@ font-size = 12
 # #
 # # Common axes are: `wght` (weight), `slnt` (slant), `ital` (italic), `opsz`
 # # (optical size), `wdth` (width), `GRAD` (gradient), etc.
-font-variation = "wght=500"
+# font-variation = "wght=900"
+# font-variation-bold = "wght=900"
+# font-variation-bold-italic = "wght=900"
 #
 # font-variation-bold =
 # font-variation-italic =
@@ -262,7 +266,7 @@ font-variation = "wght=500"
 # #   but without any of the darkening artifacts.
 # #
 # # Available since: 1.1.0
-# alpha-blending = native
+alpha-blending = linear
 #
 # # All of the configurations behavior adjust various metrics determined by the
 # # font. The values can be integers (1, -1, etc.) or a percentage (20%, -15%,
@@ -290,7 +294,7 @@ font-variation = "wght=500"
 # #     that things like status lines continue to look aligned.
 # adjust-cell-width =
 #
-adjust-cell-height = 20%
+# adjust-cell-height = 20%
 # # Distance in pixels or percentage adjustment from the bottom of the cell to the text baseline.
 # # Increase to move baseline UP, decrease to move baseline DOWN.
 # # See the notes about adjustments in `adjust-cell-width`.

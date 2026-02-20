@@ -80,6 +80,19 @@ Add to `$PROFILE`, e.g. `C:\Users\me\Documents\PowerShell\Microsoft.PowerShell_p
 
 ## Fonts
 
+### JetBrains Mono
+
+Tried Monaspace below, some rendering inconsistencies across apps/platforms. Trying out JetBrains Mono now.
+
+https://www.jetbrains.com/lp/mono/
+
+```
+Font Name:           JetBrains Mono
+
+# macOS
+brew install font-monaspace
+```
+
 ### GitHub Monaspace
 
 https://monaspace.githubnext.com/
