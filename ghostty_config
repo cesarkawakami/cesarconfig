@@ -156,7 +156,7 @@ font-synthetic-style = false
 # # On Linux with GTK, font size is scaled according to both display-wide and
 # # text-specific scaling factors, which are often managed by your desktop
 # # environment (e.g. the GNOME display scale and large text settings).
-font-size = 13
+font-size = 12
 #
 # # A repeatable configuration to set one or more font variations values for
 # # a variable font. A variable font is a single font, usually with a filename
@@ -294,7 +294,7 @@ alpha-blending = linear
 # #     that things like status lines continue to look aligned.
 # adjust-cell-width =
 #
-# adjust-cell-height = 20%
+adjust-cell-height = 20%
 # # Distance in pixels or percentage adjustment from the bottom of the cell to the text baseline.
 # # Increase to move baseline UP, decrease to move baseline DOWN.
 # # See the notes about adjustments in `adjust-cell-width`.
@@ -308,7 +308,7 @@ alpha-blending = linear
 # # Thickness in pixels of the underline.
 # # See the notes about adjustments in `adjust-cell-width`.
 # adjust-underline-thickness =
-#
+
 # # Distance in pixels or percentage adjustment from the top of the cell to the top of the strikethrough.
 # # Increase to move strikethrough DOWN, decrease to move strikethrough UP.
 # # See the notes about adjustments in `adjust-cell-width`.
