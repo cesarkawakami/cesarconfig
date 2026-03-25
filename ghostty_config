@@ -47,7 +47,7 @@
 # # configuration files or on the CLI if you want to clear values set on the
 # # CLI.
 # font-family = Monaspace Neon Var
-font-family = JetBrains Mono
+font-family = JetBrains Mono NL
 # font-family-italic = Monaspace Neon Medium Italic
 # # font-family-bold = Monaspace Neon Bold
 # # font-family-bold-italic = Monaspace Neon Bold Italic
@@ -1304,7 +1304,7 @@ background = #151522
 # # This is a future planned feature.
 # #
 # # This can be changed at runtime but will only affect new terminal surfaces.
-scrollback-limit = 10000000
+scrollback-limit = 250000000
 #
 # # Match a regular expression against the terminal text and associate clicking
 # # it with an action. This can be used to match URLs, file paths, etc. Actions
@@ -2628,7 +2628,7 @@ scrollback-limit = 10000000
 # # terminfo on remote hosts and use `xterm-ghostty` as TERM, falling back to
 # # `xterm-256color` with environment variables if terminfo installation fails.
 # # shell-integration-features = cursor,no-sudo,title,no-ssh-env,no-ssh-terminfo,path
-shell-integration-features = no-cursor,no-sudo,title,no-ssh-env,no-ssh-terminfo,path
+shell-integration-features = no-cursor,no-sudo,no-title,ssh-env,ssh-terminfo,path
 #
 # # Custom entries into the command palette.
 # #

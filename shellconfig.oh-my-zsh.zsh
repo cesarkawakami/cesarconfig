@@ -16,3 +16,5 @@ zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}
 
 # Command line editing
 bindkey '^U' backward-kill-line
+bindkey '^P' up-line-or-search
+bindkey '^N' down-line-or-search
