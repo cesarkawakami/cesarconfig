@@ -18,3 +18,6 @@ zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}
 bindkey '^U' backward-kill-line
 bindkey '^P' up-line-or-search
 bindkey '^N' down-line-or-search
+
+# Add local bin
+path=("${0:a:h}/bin" $path)
