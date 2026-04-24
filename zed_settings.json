@@ -7,12 +7,22 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
   "close_on_file_delete": true,
   "diff_view_style": "unified",
   "edit_predictions": {
     "provider": "zed",
   },
   "git_panel": {
+    "dock": "left",
     "tree_view": true,
   },
   "buffer_font_weight": 400.0,
@@ -54,6 +64,7 @@
   "file_scan_exclusions": [],
   "file_scan_inclusions": ["**/.venv", "**/local"],
   "agent": {
+    "dock": "right",
     "expand_edit_card": false,
     "expand_terminal_card": false,
     "enable_feedback": false,
@@ -85,8 +96,8 @@
   },
   "agent_servers": {
     "claude-acp": {
-      "type": "registry",
-    },
+      "type": "registry"
+    }
   },
   "session": {
     "trust_all_worktrees": true,
