@@ -13,6 +13,15 @@ Replace the `source $ZSH/oh-my-zsh.sh` line with (don't use the config above):
 . ~/cesarconfig/shellconfig.oh-my-zsh.zsh
 ```
 
+## Ghostty
+Add to `~/.config/ghostty/config.ghostty`:
+```
+config-file = /Users/cesar/cesarconfig/ghostty_config
+config-file = ?local.ghostty
+```
+Local overrides go in `~/.config/ghostty/local.ghostty`.
+
+
 ## Starship
 Add to `~/.zshrc`:
 ```
